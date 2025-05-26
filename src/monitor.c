@@ -6,11 +6,11 @@
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 21:47:37 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 23:24:11 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:10:23 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 // Checks if the philosopher is dead
 int	philosopher_dead(t_philo *philo, size_t time_to_die)
@@ -40,7 +40,7 @@ int	check_if_dead(t_philo *philos)
 			pthread_mutex_unlock(philos[0].dead_lock);
 			return (1);
 		}
-		i++:
+		i++;
 	}
 	return (0);
 }

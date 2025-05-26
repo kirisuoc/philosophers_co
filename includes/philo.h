@@ -6,7 +6,7 @@
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 21:14:36 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 23:17:34 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:24:28 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define PHILO_MAX 300
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	pthread_t		thread;
 	int				id;
@@ -41,12 +41,13 @@ typedef struct	s_philo
 	pthread_mutex_t	*meal_lock;
 }				t_philo;
 
-typedef struct	s_program
+typedef struct s_program
 {
 	int				dead_flag;
 	pthread_mutex_t	dead_lock;
 	pthread_mutex_t	meal_lock;
 	pthread_mutex_t	write_lock;
+	t_philo			*philos;
 }				t_program;
 
 // Main functions
@@ -65,18 +66,18 @@ void	init_input(t_philo *philo, char **argv);
 // Threads
 int		dead_loop(t_philo *philo);
 void	*philo_routine(void *pointer);
-int		hread_create(t_program *program, pthread_mutex_t *forks);
+int		thread_create(t_program *program, pthread_mutex_t *forks);
 
 // Actions
 void	think(t_philo *philo);
-void	sleep(t_philo *philo);
+void	dream(t_philo *philo);
 void	eat(t_philo *philo);
 
 // Monitor utils
 int		check_if_all_ate(t_philo *philos);
 int		check_if_dead(t_philo *philos);
 int		philosopher_dead(t_philo *philo, size_t time_to_die);
-// dead_loop ????
+void	*monitor(void *pointer);
 
 // Utils
 int		ft_strlen(char *str);

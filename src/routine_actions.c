@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rountine_actions.c                                 :+:      :+:    :+:   */
+/*   routine_actions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:43:47 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 22:49:58 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:14:16 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 // Think routine function
 
@@ -21,7 +21,7 @@ void	think(t_philo *philo)
 
 // Sleep routine function
 
-void	sleep(t_philo *philo)
+void	dream(t_philo *philo)
 {
 	print_message("is sleeping", philo, philo->id);
 	ft_usleep(philo->time_to_sleep);

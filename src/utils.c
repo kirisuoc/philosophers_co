@@ -6,11 +6,11 @@
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 21:32:00 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 23:24:42 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:25:12 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 // Checks the len of the string
 
@@ -36,8 +36,8 @@ int	ft_atoi(char *str)
 	nb = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '/t' || str[i] == '/n' || str[i] == 'v'
-		|| str[i] == '/f' || str[i] == '/r')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == 'v'
+		|| str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '-')
 		sign = -1;

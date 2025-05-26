@@ -6,11 +6,11 @@
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:53:06 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 23:09:01 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:21:27 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 // Checks if the value of dead_flag changed
 
@@ -35,7 +35,7 @@ void	*philo_routine(void *pointer)
 	while (!dead_loop(philo))
 	{
 		eat(philo);
-		sleep(philo);
+		dream(philo);
 		think(philo);
 	}
 	return (pointer);
@@ -45,7 +45,7 @@ void	*philo_routine(void *pointer)
 
 int	thread_create(t_program *program, pthread_mutex_t *forks)
 {
-	pthread_mutex_t	observer;
+	pthread_t	observer;
 	int				i;
 
 	if (pthread_create(&observer, NULL, &monitor, program->philos) != 0)

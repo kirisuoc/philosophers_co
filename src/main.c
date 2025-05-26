@@ -6,11 +6,11 @@
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:04:57 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 23:14:46 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:14:34 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 // Checks that the input is only numbers
 
@@ -19,7 +19,7 @@ int	check_arg_content(char *arg)
 	int	i;
 
 	i = 0;
-	while (arg[i] != '/0')
+	while (arg[i] != '\0')
 	{
 		if (arg[i] < '0' || arg[i] > '9')
 			return (1);

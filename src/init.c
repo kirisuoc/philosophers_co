@@ -6,11 +6,11 @@
 /*   By: ecousill <ecousill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 20:48:30 by ecousill          #+#    #+#             */
-/*   Updated: 2025/05/24 23:10:02 by ecousill         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:20:19 by ecousill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 // Initializing the input from user
 
@@ -48,7 +48,7 @@ void	init_philos(t_philo *philos, t_program *program, pthread_mutex_t *forks,
 		philos[i].dead = &program->dead_flag;
 		philos[i].l_fork = &forks[i];
 		if (i == 0)
-			philos[i].r_fork = &fork[philos[i].num_of_philos - 1];
+			philos[i].r_fork = &forks[philos[i].num_of_philos - 1];
 		else
 			philos[i].r_fork = &forks[i - 1];
 		i++;
